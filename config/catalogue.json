@@ -1,0 +1,93 @@
+{
+  "projects": [
+    "php",
+    "python",
+    "postgresql",
+    "nginx",
+    "mariadb",
+    "redis",
+    "git",
+    "nodejs",
+    "openssh",
+    "curl",
+    "podman",
+    "ansible"
+  ],
+  "repositories": [
+    {
+      "id": "ubuntu_22_04",
+      "label": "Ubuntu 22.04 LTS",
+      "family": "ubuntu",
+      "series": "jammy",
+      "source": "https://ubuntu.com/about/release-cycle"
+    },
+    {
+      "id": "ubuntu_24_04",
+      "label": "Ubuntu 24.04 LTS",
+      "family": "ubuntu",
+      "series": "noble",
+      "source": "https://ubuntu.com/about/release-cycle"
+    },
+    {
+      "id": "ubuntu_26_04",
+      "label": "Ubuntu 26.04 LTS",
+      "family": "ubuntu",
+      "series": "resolute",
+      "source": "https://ubuntu.com/about/release-cycle"
+    },
+    {
+      "id": "debian_12",
+      "label": "Debian 12",
+      "family": "debian",
+      "series": "bookworm",
+      "source": "https://www.debian.org/releases/bookworm/"
+    },
+    {
+      "id": "debian_13",
+      "label": "Debian 13",
+      "family": "debian",
+      "series": "trixie",
+      "source": "https://www.debian.org/releases/trixie/"
+    },
+    {
+      "id": "fedora_44",
+      "label": "Fedora 44",
+      "family": "fedora",
+      "source": "https://docs.fedoraproject.org/en-US/releases/lifecycle/"
+    },
+    {
+      "id": "fedora_45",
+      "label": "Fedora 45",
+      "family": "fedora",
+      "source": "https://docs.fedoraproject.org/en-US/releases/lifecycle/"
+    },
+    {
+      "id": "almalinux_9",
+      "label": "AlmaLinux 9",
+      "family": "alma",
+      "major": 9,
+      "source": "https://wiki.almalinux.org/release-notes/"
+    },
+    {
+      "id": "almalinux_10",
+      "label": "AlmaLinux 10",
+      "family": "alma",
+      "major": 10,
+      "source": "https://wiki.almalinux.org/release-notes/"
+    }
+  ],
+  "default_repositories": [
+    "ubuntu_24_04",
+    "debian_13",
+    "almalinux_9"
+  ],
+  "default_projects": [
+    "php",
+    "python",
+    "postgresql",
+    "nginx"
+  ],
+  "max_projects": 30,
+  "max_repositories": 6,
+  "api_base": "https://coolcode-visitor-api.jeffdyer.workers.dev/api/distropilot"
+}

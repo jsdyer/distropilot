@@ -1,34 +1,17 @@
 <!doctype html>
 <html lang="en-CA">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="{{DESCRIPTION}}">
-  <title>{{TITLE}} · CoolCode</title>
-  <link rel="stylesheet" href="./style.css">
-  <script type="module" src="./app.mjs"></script>
-  {{VISIT_COUNTER}}
-</head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="{{DESCRIPTION}}"><title>Compare Linux distributions and package versions · CoolCode</title><link rel="stylesheet" href="./style.css"><script type="module" src="./app.mjs"></script>{{VISIT_COUNTER}}</head>
 <body data-tool-id="{{TOOL_ID}}">
-  <a class="skip" href="#main">Skip to content</a>
-  <header><a href="https://coolcode.ca/">← CoolCode.ca</a><a href="{{SOURCE_URL}}">Source &amp; instructions ↗</a></header>
-  <main id="main">
-    <p class="eyebrow">Browser tool starter</p>
-    <h1>{{TITLE}}</h1>
-    <p class="intro">{{DESCRIPTION}}</p>
-    <section aria-labelledby="example-title">
-      <h2 id="example-title">Clean a list</h2>
-      <p>Trim spaces, skip blank lines and remove exact duplicates. Capitalization stays distinct.</p>
-      <div class="panels">
-        <div><label for="input">Your lines</label><textarea id="input" rows="10" maxlength="100000" spellcheck="false" placeholder="Paste one item per line"></textarea></div>
-        <div><label for="output">Cleaned lines</label><textarea id="output" rows="10" readonly spellcheck="false"></textarea></div>
-      </div>
-      <div class="actions"><button id="sample" type="button">Load example</button><button id="clear" type="button">Clear</button><button id="copy" type="button" hidden>Copy result</button></div>
-      <p id="status" role="status" aria-live="polite">Paste a list to begin.</p>
-      <noscript><p>This tool needs JavaScript to process your text. The source is available above.</p></noscript>
-    </section>
-    <aside aria-label="Privacy"><strong>Stays on your device.</strong> The browser processes your text in this tab. Reloading clears it.</aside>
-  </main>
-  <footer>Part of <a href="https://coolcode.ca/">the CoolCode collection</a>. {{ISSUE_LINK}}</footer>
-</body>
-</html>
+<a class="skip" href="#main">Skip to content</a>
+<header><a href="https://coolcode.ca/">← CoolCode.ca</a><a href="{{SOURCE_URL}}">Source &amp; instructions ↗</a></header>
+<main id="main">
+<div class="hero"><div><p class="eyebrow">LINUX / MIGRATION WORKBENCH</p><h1>{{TITLE}}</h1><p class="intro">Build your software wishlist. Compare package versions and support windows before choosing your next Linux release.</p></div><div class="hero-stamp"><span class="status-dot"></span> Source capture<strong id="capture-date">Loading…</strong><span>Ubuntu · Debian · Fedora · AlmaLinux</span></div></div>
+<p id="status" role="status" aria-live="polite">Loading the published source capture…</p>
+<div id="workspace" hidden>
+<section class="release-section" aria-labelledby="release-heading"><div class="section-title"><div><span class="step">01</span><h2 id="release-heading">Choose your releases</h2></div><p id="release-limit">Compare up to 6</p></div><div id="releases" class="release-grid"></div></section>
+<section aria-labelledby="software-heading"><div class="section-title"><div><span class="step">02</span><h2 id="software-heading">Build your wishlist</h2></div><span id="project-count"></span></div><form id="add-form"><label for="project">Repology project name</label><div class="input-line"><input id="project" list="projects" placeholder="e.g. curl, podman or sqlite" maxlength="100" required spellcheck="false" autocomplete="off"><datalist id="projects"></datalist><button type="submit" id="add">Add software</button></div><p class="hint">Search uses project identifiers, which may differ from a distribution’s package name. <a href="https://repology.org/projects/" target="_blank" rel="noopener">Find an identifier ↗</a></p></form><div id="chips" class="chips"></div></section>
+<section class="comparison" aria-labelledby="comparison-heading"><div class="section-title"><div><span class="step">03</span><h2 id="comparison-heading">Compare the evidence</h2></div><button id="refresh" class="secondary">Refresh selected project</button></div><label for="refresh-project" class="compact">Project to refresh</label><select id="refresh-project"></select><p class="hint">Versions are upstream versions recorded by Repology. Expand a cell for distribution revisions and repository sections. Older versions can receive security backports; version numbers alone do not measure security.</p><div class="table-wrap" tabindex="0" aria-label="Package comparison; scroll horizontally"><table><caption class="sr-only">Captured package versions by selected Linux release</caption><thead id="table-head"></thead><tbody id="table-body"></tbody></table></div></section>
+<section aria-labelledby="plan-heading"><div class="section-title"><div><span class="step">04</span><h2 id="plan-heading">Keep your migration plan</h2></div><span class="local-label">Saved only when you choose</span></div><p>Add requirements, compatibility checks or upgrade steps to each project below. The exported plan includes the evidence and its capture dates.</p><div id="notes" class="notes-grid"></div><div class="actions"><button id="save">Save in this browser</button><button id="restore" class="secondary">Restore saved plan</button><button id="export" class="secondary">Export plan JSON</button><button id="csv" class="secondary">Export versions CSV</button><label class="button secondary" for="import">Import plan<input id="import" type="file" accept=".json,application/json" class="sr-only"></label><button id="forget" class="quiet">Delete saved plan</button></div></section>
+<details class="source-panel"><summary>Sources, coverage &amp; privacy</summary><div class="source-content"><h3>Read the dates correctly</h3><p>Ubuntu and Debian support dates come from Debian’s distro-info-data. Ubuntu ESM and legacy dates may require registration or an eligible support service. Debian LTS and ELTS have different package coverage and eligibility. AlmaLinux’s active and security support dates come from its official release notes. Fedora dates are not captured here; follow the linked official lifecycle for current policy.</p><p>Repology is an index of package repositories, not a dependency solver. Missing records mean missing captured evidence, not proof that a package cannot be installed. Repository branches, modules and alternative builds may coexist. Architecture is not available in this source. Always check the distribution’s own package and security documentation before migration.</p><ul><li><a href="https://repology.org/">Repology package index</a></li><li><a href="https://salsa.debian.org/debian/distro-info-data">Debian distro-info-data</a></li><li><a href="https://wiki.almalinux.org/release-notes/">AlmaLinux support policy</a></li><li><a href="https://docs.fedoraproject.org/en-US/releases/lifecycle/">Fedora release lifecycle</a></li></ul><h3>What leaves your browser</h3><p>The published capture loads from this site. A new project lookup or refresh sends the project identifier to CoolCode’s cached Repology gateway. Your selected releases, migration notes and imported plans stay in this browser. Nothing is saved locally until you select “Save in this browser”. Imported and saved plans preserve their original evidence; reload to return to the current published capture.</p><p id="source-detail"></p></div></details>
+</div><noscript>This comparison tool needs JavaScript. The source repository includes the published data and instructions.</noscript>
+</main><footer>Part of <a href="https://coolcode.ca/">the CoolCode collection</a>. {{ISSUE_LINK}}</footer></body></html>

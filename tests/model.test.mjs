@@ -1,21 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { cleanLines } from '../web/model.mjs';
-test('trims, removes blanks and preserves first-seen order', () => {
-  assert.deepEqual(cleanLines('  Halifax\nLangley\nHalifax\n\nVancouver  '), {
-    text: 'Halifax\nLangley\nVancouver', count: 3, removed: 1,
-  });
-});
-test('supports Windows and old Mac line endings', () => {
-  assert.equal(cleanLines('a\r\nb\ra').text, 'a\nb');
-});
-test('empty text and whitespace produce an empty result', () => {
-  assert.deepEqual(cleanLines(' \n\t'), { text: '', count: 0, removed: 0 });
-});
-test('preserves case and Unicode', () => {
-  assert.equal(cleanLines('Québec\nquébec\n東京\nQuébec').text, 'Québec\nquébec\n東京');
-});
-test('treats markup as ordinary text', () => {
-  assert.equal(cleanLines('<script>alert(1)</script>\n<script>alert(1)</script>').text, '<script>alert(1)</script>');
-});
-test('rejects non-text input', () => { assert.throws(() => cleanLines(null), TypeError); });
+import {readFileSync} from 'node:fs';
+import {validProject,packages,cell,support,validateCapture,plan,readPlan,csv,csvValue} from '../web/model.mjs';
+const capture=JSON.parse(readFileSync(new URL('../web/data/catalogue.json',import.meta.url)));
+test('arbitrary valid project identifiers and malformed names',()=>{for(const name of ['sqlite','c++utilities','extra-project_2.1'])assert.ok(validProject(name));for(const name of ['','../etc','PHP','x?y','x'.repeat(101)])assert.equal(validProject(name),false);});
+test('deduplicates package evidence but preserves branches and packaging revisions',()=>{const row={repo:'debian_13',version:'8.4.11',origversion:'8.4.11-1',subrepo:'main',maintainers:['private']};const normalized=packages([row,row,{...row,origversion:'8.4.11-2'}]);assert.equal(normalized.length,2);assert.equal(normalized[0].maintainers,undefined);assert.equal(cell({packages:normalized},'debian_13').length,2);assert.deepEqual(cell({packages:normalized},'unknown'),[]);assert.throws(()=>packages([{repo:'x'}]));});
+test('support dates are distinct from software version security',()=>{assert.equal(support('2026-01-01','2026-11-25'),'Ended');assert.equal(support('2030-01-01','2026-11-25'),'Until');assert.equal(support(null),'Not captured');});
+test('a plan preserves older, expanded evidence and notes',()=>{const old=structuredClone(capture);old.checked_at='2025-01-02T03:04:05Z';old.projects.sqlite={project:'sqlite',checked_at:old.checked_at,packages:[{repo:'debian_13',version:'3.40'}]};const value=readPlan(plan(old,['debian_13'],['sqlite'],{sqlite:'Check extensions <img>'}));assert.equal(value.capture.checked_at,old.checked_at);assert.equal(value.capture.projects.sqlite.packages[0].version,'3.40');assert.equal(value.notes.sqlite,'Check extensions <img>');assert.throws(()=>readPlan({...value,selected:['not-a-release']}));assert.throws(()=>validateCapture({...old,checked_at:'unknown'}));});
+test('CSV exports source check dates and neutralizes spreadsheet formulas',()=>{assert.equal(csvValue('=1+1'),'"\'=1+1"');const text=csv(capture,['debian_13'],['php'],{php:'=cmd|unsafe'});assert.match(text,/Checked at/);assert.match(text,/'=cmd\|unsafe/);assert.ok(text.includes(capture.projects.php.checked_at));});
+test('actual published capture validates and records missing index coverage honestly',()=>{const data=validateCapture(capture);assert.ok(Object.keys(data.projects).length>=12);assert.ok(data.repositories.some(r=>r.family==='fedora'&&Object.keys(r.lifecycle).length===0));assert.ok(data.repositories.every(r=>typeof r.observed_in_capture==='boolean'));});

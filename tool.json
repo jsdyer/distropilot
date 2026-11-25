@@ -1,16 +1,22 @@
 {
-  "id": "coolcode-tool-template",
-  "title": "CoolCode Tool Starter",
-  "description": "A browser-only example that trims lines and removes exact duplicates.",
-  "category": "security",
-  "tags": ["text", "lines", "duplicates"],
-  "icon": "scan-search",
-  "url": "/coolcode-tool-template/",
-  "source": "https://github.com/jsdyer/coolcode-tool-template",
+  "id": "distropilot",
+  "title": "Distro Pilot",
+  "description": "Compare Linux package versions and support windows, then save a migration plan.",
+  "category": "projects",
+  "tags": [
+    "linux",
+    "distributions",
+    "packages",
+    "migration",
+    "support"
+  ],
+  "icon": "server-cog",
+  "url": "/distropilot/",
+  "source": "https://github.com/jsdyer/distropilot",
   "hosting": "project",
   "access": "browser",
   "data_info": {
-    "mode": "local",
-    "detail": "The browser reads the text you paste and compares its lines."
+    "mode": "mixed",
+    "detail": "Repology package captures and official distro lifecycle dates; live project lookups use a cached gateway."
   }
 }
