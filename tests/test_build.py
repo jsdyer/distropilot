@@ -30,9 +30,35 @@ class BuildTests(unittest.TestCase):
         self.assertIn('&lt;img', page)
         self.assertNotIn('<img', page)
         self.assertNotIn('{{', page)
-        self.assertIn('href="./style.css"', page)
+        self.assertRegex(page, r'href="\./style\.css\?v=[a-f0-9]{16}"')
         self.assertFalse((self.root / "dist/private.txt").exists())
         self.assertTrue((self.root / "dist/.nojekyll").exists())
+
+    def test_local_modules_and_catalogue_share_a_stable_content_version(self):
+        import re
+        build(self.root)
+        page = (self.root / "dist/index.html").read_text()
+        version = re.search(r'app\.mjs\?v=([a-f0-9]{16})', page).group(1)
+        app = (self.root / "dist/app.mjs").read_text()
+        self.assertIn(f"'./model.mjs?v={version}'", app)
+        self.assertIn(f"'./data/catalogue.json?v={version}'", app)
+        self.assertIn(f'./style.css?v={version}', page)
+        self.assertNotIn('/assets/tool-metrics.js?v=', page)
+        build(self.root)
+        self.assertEqual((self.root / "dist/index.html").read_text(), page)
+        model = self.root / "web/model.mjs"
+        model.write_text(model.read_text() + "\n// Changed module content\n")
+        build(self.root)
+        changed = (self.root / "dist/index.html").read_text()
+        self.assertNotIn(f"app.mjs?v={version}", changed)
+        changed_version = re.search(r'app\.mjs\?v=([a-f0-9]{16})', changed).group(1)
+        catalogue = self.root / "web/data/catalogue.json"
+        value = json.loads(catalogue.read_text())
+        value['checked_at'] = '2025-01-01T00:00:00Z'
+        catalogue.write_text(json.dumps(value))
+        build(self.root)
+        self.assertNotIn(f"app.mjs?v={changed_version}", (self.root / "dist/index.html").read_text())
+        self.assertEqual(json.loads((self.root / "dist/data/catalogue.json").read_text())['checked_at'], value['checked_at'])
 
     def test_reporting_is_scoped_to_initialized_coolcode_tools(self):
         for owner, slug, enabled in [
