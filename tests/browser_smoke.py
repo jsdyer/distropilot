@@ -30,8 +30,8 @@ def main():
                 assert page.get_by_label('sqlite migration notes').input_value()=='Check extensions before migration'
                 with page.expect_download() as download:page.locator('#export').click()
                 value=json.loads(Path(download.value.path()).read_text());assert value['wishlist'][-1]=='sqlite';assert value['capture']['projects']['sqlite']['checked_at']=='2026-11-25T01:00:00Z'
-                page.route('**/api/distropilot/project?*',lambda route:route.fulfill(status=429,headers={'Retry-After':'2'},json={'error':'busy'}))
-                page.locator('#refresh-project').select_option('sqlite');page.locator('#refresh').click();page.wait_for_function("document.getElementById('status').textContent.includes('Retry in 2')")
+                page.route('**/api/distropilot/project?*',lambda route:route.fulfill(status=429,headers={'Retry-After':'2','Access-Control-Allow-Origin':'*','Access-Control-Expose-Headers':'Retry-After'},json={'error':'busy'}))
+                page.locator('#refresh-project').select_option('sqlite');page.locator('#refresh').click();page.wait_for_function("!document.getElementById('refresh').disabled");assert 'Retry in 2' in page.locator('#status').inner_text(),page.locator('#status').inner_text()
                 assert '3.50' in page.locator('#table-body').inner_text()
                 page.screenshot(path=str(screenshots/'desktop.png'),full_page=True)
                 page.set_viewport_size({'width':390,'height':844});assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth');page.screenshot(path=str(screenshots/'mobile.png'),full_page=True)
