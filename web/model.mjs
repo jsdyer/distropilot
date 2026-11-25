@@ -18,6 +18,17 @@ export function support(date, today = new Date().toISOString().slice(0,10)) {
   if (!date) return 'Not captured';
   return date < today ? 'Ended' : 'Until';
 }
+export function browseProjects(capture, query='', category='') {
+  const q=query.trim().toLowerCase();
+  return Object.entries(capture.projects).map(([name,p])=>({...p,project:name,label:p.label||name,category:p.category||'Other'}))
+    .filter(p=>(!category||p.category===category)&&[p.project,p.label,p.category].join(' ').toLowerCase().includes(q))
+    .sort((a,b)=>a.label.localeCompare(b.label));
+}
+export function browseRepositories(capture, query='', family='') {
+  const q=query.trim().toLowerCase();
+  return capture.repositories.filter(r=>(!family||r.family===family)&&[r.label,r.id,r.family,r.release_model||'fixed'].join(' ').toLowerCase().includes(q));
+}
+export const projectCoverage = (project,repositories) => new Set((project.packages||[]).filter(p=>repositories.some(r=>r.id===p.repo)).map(p=>p.repo)).size;
 export function validateCapture(value) {
   if (!value || value.schema !== 1 || !Array.isArray(value.repositories) || value.repositories.length < 1 || value.repositories.length > 100 || typeof value.projects !== 'object' || !value.projects || !validDate(value.checked_at)) throw new Error('This is not a Distro Pilot capture.');
   const ids = new Set();
@@ -26,16 +37,20 @@ export function validateCapture(value) {
     ids.add(r.id);
     const lifecycle = {};
     for (const [key,date] of Object.entries(r.lifecycle || {})) if (/^(release|eol(?:-server|-esm|-lts|-elts|-legacy|-security)?)$/.test(key)) { if (date && !/^\d{4}-\d{2}-\d{2}$/.test(date)) throw new Error('Invalid lifecycle date.'); lifecycle[key] = date; }
-    return {id:r.id,label:r.label,family:String(r.family || '').slice(0,30),source:safeLink(r.source),lifecycle,observed_in_capture:!!r.observed_in_capture};
+    return {id:r.id,label:r.label,family:String(r.family || '').slice(0,30),source:safeLink(r.source),lifecycle,observed_in_capture:!!r.observed_in_capture,
+      release_model:['fixed','rolling','development'].includes(r.release_model)?r.release_model:'fixed',
+      policy_note:String(r.policy_note||'').slice(0,600),policy_verified_on:/^\d{4}-\d{2}-\d{2}$/.test(r.policy_verified_on||'')?r.policy_verified_on:'',
+      lifecycle_basis:r.lifecycle_basis==='reviewed'?'reviewed':'fetched'};
   });
   const projects = Object.create(null);
   const entries = Object.entries(value.projects);
   if (entries.length > 100) throw new Error('Capture has too many projects.');
   for (const [name,p] of entries) {
     if (!validProject(name) || !p || !validDate(p.checked_at)) throw new Error('Invalid project capture.');
-    projects[name] = {project:name,checked_at:p.checked_at,packages:packages(p.packages)};
+    projects[name] = {project:name,label:String(p.label||name).slice(0,150),category:String(p.category||'Other').slice(0,80),checked_at:p.checked_at,packages:packages(p.packages)};
   }
-  return {...value,repositories,projects};
+  const coverage_notes=(Array.isArray(value.coverage_notes)?value.coverage_notes:[]).slice(0,20).map(n=>({label:String(n?.label||'Coverage').slice(0,150),text:String(n?.text||'').slice(0,1000),source:safeLink(n?.source),reviewed_on:/^\d{4}-\d{2}-\d{2}$/.test(n?.reviewed_on||'')?n.reviewed_on:''}));
+  return {...value,repositories,projects,coverage_notes};
 }
 export const validDate = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}T/.test(value) && Number.isFinite(Date.parse(value));
 export function safeLink(value) { try { const u = new URL(value); return u.protocol === 'https:' ? u.href : ''; } catch { return ''; } }

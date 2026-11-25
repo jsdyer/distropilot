@@ -1,79 +1,254 @@
 {
   "projects": [
-    "php",
-    "python",
-    "postgresql",
-    "nginx",
-    "mariadb",
-    "redis",
-    "git",
-    "nodejs",
+    "firefox",
+    "chromium",
+    "thunderbird",
+    "libreoffice",
+    "calibre",
+    "keepassxc",
+    "cinnamon",
+    "remmina",
+    "vlc",
+    "mpv",
+    "ffmpeg",
+    "gimp",
+    "inkscape",
+    "krita",
+    "blender",
+    "audacity",
+    "obs-studio",
+    "handbrake",
+    "restic",
+    "borgbackup",
+    "rclone",
+    "rsync",
+    "syncthing",
+    "duplicity",
+    "filezilla",
+    "ncdu",
     "openssh",
+    "openvpn",
+    "wireguard-tools",
+    "nmap",
+    "wireshark",
+    "bind",
+    "unbound",
+    "dnsmasq",
     "curl",
+    "wget",
+    "git",
+    "python",
+    "nodejs",
+    "go",
+    "rust",
+    "gcc",
+    "cmake",
+    "php",
+    "ruby",
+    "neovim",
+    "vim",
+    "emacs",
+    "jq",
+    "ripgrep",
+    "fzf",
+    "tmux",
+    "zsh",
+    "fish",
+    "htop",
+    "btop",
     "podman",
-    "ansible"
+    "ansible",
+    "postgresql",
+    "mariadb",
+    "sqlite",
+    "redis",
+    "nginx",
+    "apache"
   ],
   "repositories": [
     {
       "id": "ubuntu_22_04",
       "label": "Ubuntu 22.04 LTS",
       "family": "ubuntu",
-      "series": "jammy",
-      "source": "https://ubuntu.com/about/release-cycle"
+      "source": "https://ubuntu.com/about/release-cycle",
+      "release_model": "fixed",
+      "series": "jammy"
     },
     {
       "id": "ubuntu_24_04",
       "label": "Ubuntu 24.04 LTS",
       "family": "ubuntu",
-      "series": "noble",
-      "source": "https://ubuntu.com/about/release-cycle"
+      "source": "https://ubuntu.com/about/release-cycle",
+      "release_model": "fixed",
+      "series": "noble"
     },
     {
       "id": "ubuntu_26_04",
       "label": "Ubuntu 26.04 LTS",
       "family": "ubuntu",
-      "series": "resolute",
-      "source": "https://ubuntu.com/about/release-cycle"
+      "source": "https://ubuntu.com/about/release-cycle",
+      "release_model": "fixed",
+      "series": "resolute"
+    },
+    {
+      "id": "ubuntu_26_10",
+      "label": "Ubuntu 26.10",
+      "family": "ubuntu",
+      "source": "https://ubuntu.com/about/release-cycle",
+      "release_model": "fixed",
+      "series": "stonking"
     },
     {
       "id": "debian_12",
       "label": "Debian 12",
       "family": "debian",
-      "series": "bookworm",
-      "source": "https://www.debian.org/releases/bookworm/"
+      "source": "https://www.debian.org/releases/bookworm/",
+      "release_model": "fixed",
+      "series": "bookworm"
     },
     {
       "id": "debian_13",
       "label": "Debian 13",
       "family": "debian",
-      "series": "trixie",
-      "source": "https://www.debian.org/releases/trixie/"
+      "source": "https://www.debian.org/releases/trixie/",
+      "release_model": "fixed",
+      "series": "trixie"
+    },
+    {
+      "id": "debian_unstable",
+      "label": "Debian unstable (sid)",
+      "family": "debian",
+      "source": "https://www.debian.org/releases/sid/",
+      "release_model": "development",
+      "policy_note": "Development branch; not a stable release. Security updates are not managed by the Debian security team.",
+      "policy_verified_on": "2026-11-25"
     },
     {
       "id": "fedora_44",
       "label": "Fedora 44",
       "family": "fedora",
-      "source": "https://docs.fedoraproject.org/en-US/releases/lifecycle/"
+      "source": "https://docs.fedoraproject.org/en-US/releases/lifecycle/",
+      "release_model": "fixed",
+      "policy_note": "Fixed releases; exact support dates are not captured. Consult the official lifecycle.",
+      "policy_verified_on": "2026-11-25"
     },
     {
       "id": "fedora_45",
       "label": "Fedora 45",
       "family": "fedora",
-      "source": "https://docs.fedoraproject.org/en-US/releases/lifecycle/"
+      "source": "https://docs.fedoraproject.org/en-US/releases/lifecycle/",
+      "release_model": "fixed",
+      "policy_note": "Fixed releases; exact support dates are not captured. Consult the official lifecycle.",
+      "policy_verified_on": "2026-11-25"
+    },
+    {
+      "id": "almalinux_8",
+      "label": "AlmaLinux 8",
+      "family": "alma",
+      "source": "https://wiki.almalinux.org/release-notes/",
+      "release_model": "fixed",
+      "major": 8,
+      "policy_note": "Support applies to the maintained minor release; keep the system updated.",
+      "policy_verified_on": "2026-11-25"
     },
     {
       "id": "almalinux_9",
       "label": "AlmaLinux 9",
       "family": "alma",
+      "source": "https://wiki.almalinux.org/release-notes/",
+      "release_model": "fixed",
       "major": 9,
-      "source": "https://wiki.almalinux.org/release-notes/"
+      "policy_note": "Support applies to the maintained minor release; keep the system updated.",
+      "policy_verified_on": "2026-11-25"
     },
     {
-      "id": "almalinux_10",
-      "label": "AlmaLinux 10",
-      "family": "alma",
-      "major": 10,
-      "source": "https://wiki.almalinux.org/release-notes/"
+      "id": "rocky_8",
+      "label": "Rocky Linux 8",
+      "family": "rocky",
+      "source": "https://docs.rockylinux.org/releases/",
+      "release_model": "fixed",
+      "major": 8,
+      "policy_note": "Support applies to the maintained minor release; keep the system updated.",
+      "policy_verified_on": "2026-11-25"
+    },
+    {
+      "id": "rocky_9",
+      "label": "Rocky Linux 9",
+      "family": "rocky",
+      "source": "https://docs.rockylinux.org/releases/",
+      "release_model": "fixed",
+      "major": 9,
+      "policy_note": "Support applies to the maintained minor release; keep the system updated.",
+      "policy_verified_on": "2026-11-25"
+    },
+    {
+      "id": "opensuse_leap_15_6",
+      "label": "openSUSE Leap 15.6",
+      "family": "opensuse",
+      "source": "https://calendar.opensuse.org/teams/product-schedule/events/leap-15-6-eol",
+      "release_model": "fixed",
+      "reviewed_lifecycle": {
+        "eol": "2026-04-30"
+      },
+      "policy_note": "Past end of life; included for migration planning. Leap 16 index coverage is not established here.",
+      "policy_verified_on": "2026-11-25"
+    },
+    {
+      "id": "opensuse_tumbleweed",
+      "label": "openSUSE Tumbleweed",
+      "family": "opensuse",
+      "source": "https://get.opensuse.org/desktop/",
+      "release_model": "rolling",
+      "policy_note": "Rolling release; keep taking current distribution updates.",
+      "policy_verified_on": "2026-11-25"
+    },
+    {
+      "id": "arch",
+      "label": "Arch Linux",
+      "family": "arch",
+      "source": "https://archlinux.org/about/",
+      "release_model": "rolling",
+      "policy_note": "Rolling official repositories; this does not include the AUR.",
+      "policy_verified_on": "2026-11-25"
+    },
+    {
+      "id": "void_x86_64",
+      "label": "Void Linux x86_64",
+      "family": "void",
+      "source": "https://voidlinux.org/",
+      "release_model": "rolling",
+      "policy_note": "Rolling release. This index is scoped to the x86_64 repository.",
+      "policy_verified_on": "2026-11-25"
+    },
+    {
+      "id": "alpine_3_22",
+      "label": "Alpine 3.22",
+      "family": "alpine",
+      "source": "https://www.alpinelinux.org/releases/",
+      "release_model": "fixed",
+      "series": "3.22",
+      "policy_note": "The displayed end date covers main. Community support ends with the next stable release.",
+      "policy_verified_on": "2026-11-25"
+    },
+    {
+      "id": "alpine_3_23",
+      "label": "Alpine 3.23",
+      "family": "alpine",
+      "source": "https://www.alpinelinux.org/releases/",
+      "release_model": "fixed",
+      "series": "3.23",
+      "policy_note": "The displayed end date covers main. Community support ends with the next stable release.",
+      "policy_verified_on": "2026-11-25"
+    },
+    {
+      "id": "alpine_3_24",
+      "label": "Alpine 3.24",
+      "family": "alpine",
+      "source": "https://www.alpinelinux.org/releases/",
+      "release_model": "fixed",
+      "series": "3.24",
+      "policy_note": "The displayed end date covers main. Community support ends with the next stable release.",
+      "policy_verified_on": "2026-11-25"
     }
   ],
   "default_repositories": [
@@ -89,5 +264,277 @@
   ],
   "max_projects": 30,
   "max_repositories": 6,
-  "api_base": "https://coolcode-visitor-api.jeffdyer.workers.dev/api/distropilot"
+  "api_base": "https://coolcode-visitor-api.jeffdyer.workers.dev/api/distropilot",
+  "project_info": {
+    "firefox": {
+      "label": "Firefox",
+      "category": "Desktop & office"
+    },
+    "chromium": {
+      "label": "Chromium",
+      "category": "Desktop & office"
+    },
+    "thunderbird": {
+      "label": "Thunderbird",
+      "category": "Desktop & office"
+    },
+    "libreoffice": {
+      "label": "LibreOffice",
+      "category": "Desktop & office"
+    },
+    "calibre": {
+      "label": "Calibre",
+      "category": "Desktop & office"
+    },
+    "keepassxc": {
+      "label": "KeePassXC",
+      "category": "Desktop & office"
+    },
+    "cinnamon": {
+      "label": "Cinnamon",
+      "category": "Desktop & office"
+    },
+    "remmina": {
+      "label": "Remmina",
+      "category": "Desktop & office"
+    },
+    "vlc": {
+      "label": "VLC",
+      "category": "Media & design"
+    },
+    "mpv": {
+      "label": "mpv",
+      "category": "Media & design"
+    },
+    "ffmpeg": {
+      "label": "FFmpeg",
+      "category": "Media & design"
+    },
+    "gimp": {
+      "label": "GIMP",
+      "category": "Media & design"
+    },
+    "inkscape": {
+      "label": "Inkscape",
+      "category": "Media & design"
+    },
+    "krita": {
+      "label": "Krita",
+      "category": "Media & design"
+    },
+    "blender": {
+      "label": "Blender",
+      "category": "Media & design"
+    },
+    "audacity": {
+      "label": "Audacity",
+      "category": "Media & design"
+    },
+    "obs-studio": {
+      "label": "OBS Studio",
+      "category": "Media & design"
+    },
+    "handbrake": {
+      "label": "HandBrake",
+      "category": "Media & design"
+    },
+    "restic": {
+      "label": "restic",
+      "category": "Backup & files"
+    },
+    "borgbackup": {
+      "label": "BorgBackup",
+      "category": "Backup & files"
+    },
+    "rclone": {
+      "label": "rclone",
+      "category": "Backup & files"
+    },
+    "rsync": {
+      "label": "rsync",
+      "category": "Backup & files"
+    },
+    "syncthing": {
+      "label": "Syncthing",
+      "category": "Backup & files"
+    },
+    "duplicity": {
+      "label": "Duplicity",
+      "category": "Backup & files"
+    },
+    "filezilla": {
+      "label": "FileZilla",
+      "category": "Backup & files"
+    },
+    "ncdu": {
+      "label": "ncdu",
+      "category": "Backup & files"
+    },
+    "openssh": {
+      "label": "OpenSSH",
+      "category": "Network & security"
+    },
+    "openvpn": {
+      "label": "OpenVPN",
+      "category": "Network & security"
+    },
+    "wireguard-tools": {
+      "label": "WireGuard tools",
+      "category": "Network & security"
+    },
+    "nmap": {
+      "label": "Nmap",
+      "category": "Network & security"
+    },
+    "wireshark": {
+      "label": "Wireshark",
+      "category": "Network & security"
+    },
+    "bind": {
+      "label": "BIND",
+      "category": "Network & security"
+    },
+    "unbound": {
+      "label": "Unbound",
+      "category": "Network & security"
+    },
+    "dnsmasq": {
+      "label": "dnsmasq",
+      "category": "Network & security"
+    },
+    "curl": {
+      "label": "curl",
+      "category": "Network & security"
+    },
+    "wget": {
+      "label": "Wget",
+      "category": "Network & security"
+    },
+    "git": {
+      "label": "Git",
+      "category": "Development"
+    },
+    "python": {
+      "label": "Python",
+      "category": "Development"
+    },
+    "nodejs": {
+      "label": "Node.js",
+      "category": "Development"
+    },
+    "go": {
+      "label": "Go",
+      "category": "Development"
+    },
+    "rust": {
+      "label": "Rust",
+      "category": "Development"
+    },
+    "gcc": {
+      "label": "GCC",
+      "category": "Development"
+    },
+    "cmake": {
+      "label": "CMake",
+      "category": "Development"
+    },
+    "php": {
+      "label": "PHP",
+      "category": "Development"
+    },
+    "ruby": {
+      "label": "Ruby",
+      "category": "Development"
+    },
+    "neovim": {
+      "label": "Neovim",
+      "category": "Development"
+    },
+    "vim": {
+      "label": "Vim",
+      "category": "Development"
+    },
+    "emacs": {
+      "label": "Emacs",
+      "category": "Development"
+    },
+    "jq": {
+      "label": "jq",
+      "category": "Terminal & admin"
+    },
+    "ripgrep": {
+      "label": "ripgrep",
+      "category": "Terminal & admin"
+    },
+    "fzf": {
+      "label": "fzf",
+      "category": "Terminal & admin"
+    },
+    "tmux": {
+      "label": "tmux",
+      "category": "Terminal & admin"
+    },
+    "zsh": {
+      "label": "Zsh",
+      "category": "Terminal & admin"
+    },
+    "fish": {
+      "label": "Fish",
+      "category": "Terminal & admin"
+    },
+    "htop": {
+      "label": "htop",
+      "category": "Terminal & admin"
+    },
+    "btop": {
+      "label": "btop",
+      "category": "Terminal & admin"
+    },
+    "podman": {
+      "label": "Podman",
+      "category": "Terminal & admin"
+    },
+    "ansible": {
+      "label": "Ansible",
+      "category": "Terminal & admin"
+    },
+    "postgresql": {
+      "label": "PostgreSQL",
+      "category": "Servers & databases"
+    },
+    "mariadb": {
+      "label": "MariaDB",
+      "category": "Servers & databases"
+    },
+    "sqlite": {
+      "label": "SQLite",
+      "category": "Servers & databases"
+    },
+    "redis": {
+      "label": "Redis",
+      "category": "Servers & databases"
+    },
+    "nginx": {
+      "label": "nginx",
+      "category": "Servers & databases"
+    },
+    "apache": {
+      "label": "Apache HTTP Server",
+      "category": "Servers & databases"
+    }
+  },
+  "coverage_notes": [
+    {
+      "label": "Linux Mint",
+      "text": "Mint package-index coverage is not established in this capture. Mint 22.x uses an Ubuntu 24.04 base and Mint 21.x uses Ubuntu 22.04; comparing that base does not cover Mint-specific packages. LMDE 7 uses Debian 13. Check Mint’s official release list for its own support policy.",
+      "source": "https://www.linuxmint.com/download_all.php",
+      "reviewed_on": "2026-11-25"
+    },
+    {
+      "label": "Other new releases",
+      "text": "AlmaLinux 10, Rocky Linux 10 and openSUSE Leap 16 have not been verified in the captured Repology repositories. They are not presented as package comparison choices. Absence from this tool does not mean the distribution or its packages are unavailable.",
+      "source": "https://repology.org/repositories/statistics",
+      "reviewed_on": "2026-11-25"
+    }
+  ]
 }

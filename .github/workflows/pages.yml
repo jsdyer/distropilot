@@ -31,6 +31,7 @@ jobs:
           node-version: '24'
       - name: Refresh validated source capture
         if: github.event_name != 'pull_request'
+        timeout-minutes: 11
         run: python3 scripts/refresh.py
       - name: Test the application
         run: node --test tests/*.test.mjs

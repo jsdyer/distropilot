@@ -3,7 +3,7 @@ from pathlib import Path
 import sys
 import unittest
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from refresh import collect, normalized_packages, lifecycle, alma_lifecycle
+from refresh import collect, normalized_packages, lifecycle, alma_lifecycle, table_lifecycle
 
 class RefreshTests(unittest.TestCase):
     def test_lifecycle_dates_validate_and_unknown_fields_do_not_publish(self):
@@ -29,7 +29,25 @@ class RefreshTests(unittest.TestCase):
             return json.dumps([{'repo':'fedora_45','version':'1.0'}]).encode()
         result=collect(config,fetcher=fetch,sleep=waits.append,now='2026-01-01T00:00:00Z')
         self.assertEqual(len(result['projects']),2)
-        self.assertEqual(waits,[1.1])
+        self.assertEqual(waits,[1.25])
         self.assertTrue(result['repositories'][0]['observed_in_capture'])
         def fail(url):raise OSError('source unavailable')
         with self.assertRaises(OSError):collect(config,fetcher=fail)
+
+    def test_official_table_dates_and_missing_rows(self):
+        rocky=b'<table><tr><td>Rocky Linux 9</td><td>Blue Onyx</td><td>2022-07-14</td><td>2027-05-31</td><td>2032-05-31</td><td>9.9</td></tr></table>'
+        self.assertEqual(table_lifecycle(rocky,'rocky',9)['eol-security'],'2032-05-31')
+        alpine=b'<table><tr><td><a>v3.24</a></td><td>2026-06-09</td><td>branch</td><td>versions</td><td>bullet 2028-06-01</td><td>main and community</td></tr></table>'
+        self.assertEqual(table_lifecycle(alpine,'alpine','3.24')['eol'],'2028-06-01')
+        with self.assertRaises(ValueError):table_lifecycle(alpine,'alpine','3.25')
+        with self.assertRaises(ValueError):table_lifecycle(rocky.replace(b'2032-05-31',b'2032-99-99'),'rocky',9)
+    def test_unverified_repository_cannot_silently_enter_published_choices(self):
+        config={'projects':['extra-project'],'repositories':[{'id':'arch','family':'arch'},{'id':'invented','family':'other'}],'default_projects':['extra-project'],'default_repositories':['arch'],'max_projects':30,'max_repositories':6,'api_base':''}
+        with self.assertRaisesRegex(ValueError,'no source evidence'):
+            collect(config,fetcher=lambda url:b'[{"repo":"arch","version":"1"}]',sleep=lambda _:None)
+    def test_new_project_category_and_rolling_policy_survive_collection(self):
+        config={'projects':['extra-project'],'project_info':{'extra-project':{'label':'Extra App','category':'New category'}},'repositories':[{'id':'arch','family':'arch','release_model':'rolling','policy_verified_on':'2026-11-25','policy_note':'Rolling'}],'default_projects':['extra-project'],'default_repositories':['arch'],'max_projects':30,'max_repositories':6,'api_base':''}
+        result=collect(config,fetcher=lambda url:b'[{"repo":"arch","version":"1"}]',sleep=lambda _:None)
+        self.assertEqual(result['projects']['extra-project']['category'],'New category')
+        self.assertEqual(result['repositories'][0]['lifecycle'],{})
+        self.assertEqual(result['repositories'][0]['lifecycle_basis'],'reviewed')

@@ -21,21 +21,32 @@ def main():
             with sync_playwright() as p:
                 browser=p.chromium.launch(executable_path=os.environ.get('CHROMIUM_PATH'),args=['--no-sandbox'])
                 page=browser.new_page(viewport={'width':1360,'height':1000});errors=[];page.on('pageerror',lambda error:errors.append(str(error)))
-                page.route('**/api/distropilot/project?*',lambda route:route.fulfill(json={'fetched_at':'2026-11-25T01:00:00Z','data':[{'repo':'debian_13','version':'3.50','srcname':'sqlite <img src=x>'}]}))
+                page.route('**/api/distropilot/project?*',lambda route:route.fulfill(json={'fetched_at':'2026-11-25T01:00:00Z','data':[{'repo':'debian_13','version':'3.50','srcname':'extra-live-project <img src=x>'}]}))
                 page.goto(f'http://127.0.0.1:{server.server_port}/distropilot/');page.locator('#workspace').wait_for(state='visible')
                 assert page.locator('#table-body tr').count()==4
-                page.locator('#project').fill('sqlite');page.locator('#add').click();page.get_by_role('button',name='Remove sqlite',exact=True).wait_for()
+                assert page.locator('#software-browser article').count()==12
+                page.locator('#software-search').fill('firefox');page.get_by_role('button',name='Add Firefox to wishlist',exact=True).click()
+                assert page.get_by_role('button',name='Remove firefox',exact=True).is_visible()
+                page.locator('#software-search').fill('');page.locator('#software-category').select_option('Backup & files')
+                assert 'restic' in page.locator('#software-browser').inner_text();assert 'Firefox' not in page.locator('#software-browser').inner_text()
+                page.locator('#release-search').fill('Arch');page.get_by_label('Arch Linux',exact=True).check()
+                assert 'Rolling release' in page.locator('#releases').inner_text();assert 'Arch Linux' in page.locator('#table-head').inner_text()
+                page.locator('#release-search').fill('Mint');assert 'No indexed release matches' in page.locator('#releases').inner_text()
+                page.locator('.coverage-note summary').click();assert 'does not cover Mint-specific packages' in page.locator('#coverage-notes').inner_text()
+                page.locator('#release-search').fill('');page.locator('#software-category').select_option('')
+                page.locator('.custom-project summary').click()
+                page.locator('#project').fill('extra-live-project');page.locator('#add').click();page.get_by_role('button',name='Remove extra-live-project',exact=True).wait_for()
                 assert '3.50' in page.locator('#table-body').inner_text();assert page.locator('img').count()==0
-                page.get_by_label('sqlite migration notes').fill('Check extensions before migration');page.locator('#save').click();page.get_by_role('button',name='Remove sqlite',exact=True).click();page.locator('#restore').click()
-                assert page.get_by_label('sqlite migration notes').input_value()=='Check extensions before migration'
+                page.get_by_label('extra-live-project migration notes').fill('Check extensions before migration');page.locator('#save').click();page.get_by_role('button',name='Remove extra-live-project',exact=True).click();page.locator('#restore').click()
+                assert page.get_by_label('extra-live-project migration notes').input_value()=='Check extensions before migration'
                 with page.expect_download() as download:page.locator('#export').click()
-                value=json.loads(Path(download.value.path()).read_text());assert value['wishlist'][-1]=='sqlite';assert value['capture']['projects']['sqlite']['checked_at']=='2026-11-25T01:00:00Z'
+                value=json.loads(Path(download.value.path()).read_text());assert value['wishlist'][-1]=='extra-live-project';assert value['capture']['projects']['extra-live-project']['checked_at']=='2026-11-25T01:00:00Z'
                 page.route('**/api/distropilot/project?*',lambda route:route.fulfill(status=429,headers={'Retry-After':'2','Access-Control-Allow-Origin':'*','Access-Control-Expose-Headers':'Retry-After'},json={'error':'busy'}))
-                page.locator('#refresh-project').select_option('sqlite');page.locator('#refresh').click();page.wait_for_function("!document.getElementById('refresh').disabled");assert 'Retry in 2' in page.locator('#status').inner_text(),page.locator('#status').inner_text()
+                page.locator('#refresh-project').select_option('extra-live-project');page.locator('#refresh').click();page.wait_for_function("!document.getElementById('refresh').disabled");assert 'Retry in 2' in page.locator('#status').inner_text(),page.locator('#status').inner_text()
                 assert '3.50' in page.locator('#table-body').inner_text()
                 page.screenshot(path=str(screenshots/'desktop.png'),full_page=True)
                 page.set_viewport_size({'width':390,'height':844});assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth');page.screenshot(path=str(screenshots/'mobile.png'),full_page=True)
                 assert not errors,errors;browser.close()
-            print('Browser checks passed: extra project, safe source text, saved evidence, export, rate limit and mobile layout')
+            print('Browser checks passed: searchable categories/releases, rolling policy, Mint coverage, extra project, safe source text, saved evidence, export, rate limit and mobile layout')
         finally:server.shutdown()
 if __name__=='__main__':main()

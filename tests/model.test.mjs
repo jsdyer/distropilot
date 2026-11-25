@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {validProject,packages,cell,support,validateCapture,plan,readPlan,csv,csvValue} from '../web/model.mjs';
+import {validProject,packages,cell,support,validateCapture,plan,readPlan,csv,csvValue,browseProjects,browseRepositories,projectCoverage} from '../web/model.mjs';
 const capture=JSON.parse(readFileSync(new URL('../web/data/catalogue.json',import.meta.url)));
 test('arbitrary valid project identifiers and malformed names',()=>{for(const name of ['sqlite','c++utilities','extra-project_2.1'])assert.ok(validProject(name));for(const name of ['','../etc','PHP','x?y','x'.repeat(101)])assert.equal(validProject(name),false);});
 test('deduplicates package evidence but preserves branches and packaging revisions',()=>{const row={repo:'debian_13',version:'8.4.11',origversion:'8.4.11-1',subrepo:'main',maintainers:['private']};const normalized=packages([row,row,{...row,origversion:'8.4.11-2'}]);assert.equal(normalized.length,2);assert.equal(normalized[0].maintainers,undefined);assert.equal(cell({packages:normalized},'debian_13').length,2);assert.deepEqual(cell({packages:normalized},'unknown'),[]);assert.throws(()=>packages([{repo:'x'}]));});
@@ -9,3 +9,14 @@ test('support dates are distinct from software version security',()=>{assert.equ
 test('a plan preserves older, expanded evidence and notes',()=>{const old=structuredClone(capture);old.checked_at='2025-01-02T03:04:05Z';old.projects.sqlite={project:'sqlite',checked_at:old.checked_at,packages:[{repo:'debian_13',version:'3.40'}]};const value=readPlan(plan(old,['debian_13'],['sqlite'],{sqlite:'Check extensions <img>'}));assert.equal(value.capture.checked_at,old.checked_at);assert.equal(value.capture.projects.sqlite.packages[0].version,'3.40');assert.equal(value.notes.sqlite,'Check extensions <img>');assert.throws(()=>readPlan({...value,selected:['not-a-release']}));assert.throws(()=>validateCapture({...old,checked_at:'unknown'}));});
 test('CSV exports source check dates and neutralizes spreadsheet formulas',()=>{assert.equal(csvValue('=1+1'),'"\'=1+1"');const text=csv(capture,['debian_13'],['php'],{php:'=cmd|unsafe'});assert.match(text,/Checked at/);assert.match(text,/'=cmd\|unsafe/);assert.ok(text.includes(capture.projects.php.checked_at));});
 test('actual published capture validates and records missing index coverage honestly',()=>{const data=validateCapture(capture);assert.ok(Object.keys(data.projects).length>=12);assert.ok(data.repositories.some(r=>r.family==='fedora'&&Object.keys(r.lifecycle).length===0));assert.ok(data.repositories.every(r=>typeof r.observed_in_capture==='boolean'));});
+
+test('catalogue browsers derive search, categories and coverage from additional records',()=>{
+ const data=validateCapture(structuredClone(capture));data.projects['unlisted-app']={project:'unlisted-app',label:'Extra Desktop App',category:'Extra category',checked_at:data.checked_at,packages:[{repo:'arch',version:'1'},{repo:'arch',version:'2'}]};
+ assert.equal(browseProjects(data,'extra desktop','Extra category')[0].project,'unlisted-app');assert.equal(browseProjects(data,'missing phrase').length,0);assert.equal(projectCoverage(data.projects['unlisted-app'],data.repositories),1);
+ assert.ok(browseRepositories(data,'rolling').some(r=>r.id==='arch'));assert.ok(browseRepositories(data,'','rocky').every(r=>r.family==='rocky'));assert.equal(browseRepositories(data,'mint').length,0);
+});
+test('new metadata and original legacy captures survive plan round trips',()=>{
+ const data=validateCapture(capture),value=readPlan(plan(data,['arch'],['firefox'],{}));assert.equal(value.capture.projects.firefox.label,'Firefox');assert.equal(value.capture.repositories.find(r=>r.id==='arch').release_model,'rolling');assert.ok(value.capture.coverage_notes.some(n=>n.label==='Linux Mint'));
+ const legacy=structuredClone(capture);legacy.repositories=[{id:'almalinux_10',label:'AlmaLinux 10',family:'alma',lifecycle:{},observed_in_capture:false}];delete legacy.coverage_notes;for(const p of Object.values(legacy.projects)){delete p.label;delete p.category;}
+ const restored=readPlan(plan(legacy,['almalinux_10'],['php'],{}));assert.equal(restored.capture.projects.php.label,'php');assert.equal(restored.capture.repositories[0].observed_in_capture,false);assert.deepEqual(restored.capture.coverage_notes,[]);
+});
