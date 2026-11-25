@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "checked_at": "2026-11-25T05:27:02Z",
+  "checked_at": "2026-11-25T05:42:38Z",
   "projects": {
     "php": {
       "project": "php",
-      "checked_at": "2026-11-25T05:27:02Z",
+      "checked_at": "2026-11-25T05:42:38Z",
       "packages": [
         {
           "repo": "almalinux_9",
@@ -243,7 +243,7 @@
     },
     "python": {
       "project": "python",
-      "checked_at": "2026-11-25T05:27:02Z",
+      "checked_at": "2026-11-25T05:42:38Z",
       "packages": [
         {
           "repo": "almalinux_9",
@@ -378,67 +378,13 @@
           "origversion": "3.13.5-2+deb13u5"
         },
         {
-          "repo": "fedora_44",
-          "subrepo": "updates",
-          "srcname": "mingw-python3",
-          "visiblename": "mingw-python3",
-          "version": "3.11.18",
-          "origversion": "3.11.18-1.fc44",
-          "summary": "MinGW Windows python3"
-        },
-        {
-          "repo": "fedora_44",
-          "subrepo": "updates",
-          "srcname": "python3.11",
-          "visiblename": "python3.11",
-          "version": "3.11.18",
-          "origversion": "3.11.18-1.fc44",
-          "summary": "Version 3.11 of the Python interpreter"
-        },
-        {
-          "repo": "fedora_44",
-          "subrepo": "updates",
-          "srcname": "python3.10",
-          "visiblename": "python3.10",
-          "version": "3.10.22",
-          "origversion": "3.10.22-1.fc44",
-          "summary": "Version 3.10 of the Python interpreter"
-        },
-        {
-          "repo": "fedora_44",
-          "subrepo": "updates",
+          "repo": "fedora_45",
+          "subrepo": "release",
           "srcname": "python3.12",
           "visiblename": "python3.12",
-          "version": "3.12.16",
-          "origversion": "3.12.16-2.fc44",
+          "version": "3.12.14",
+          "origversion": "3.12.14-1.fc45",
           "summary": "Version 3.12 of the Python interpreter"
-        },
-        {
-          "repo": "fedora_44",
-          "subrepo": "updates",
-          "srcname": "python3.13",
-          "visiblename": "python3.13",
-          "version": "3.13.18",
-          "origversion": "3.13.18-1.fc44",
-          "summary": "Version 3.13 of the Python interpreter"
-        },
-        {
-          "repo": "fedora_44",
-          "subrepo": "updates",
-          "srcname": "python3.6",
-          "visiblename": "python3.6",
-          "version": "3.6.15",
-          "origversion": "3.6.15-60.fc44",
-          "summary": "Version 3.6 of the Python interpreter"
-        },
-        {
-          "repo": "fedora_44",
-          "subrepo": "updates",
-          "srcname": "python3.9",
-          "visiblename": "python3.9",
-          "version": "3.9.25",
-          "origversion": "3.9.25-15.fc44",
-          "summary": "Version 3.9 of the Python interpreter"
         },
         {
           "repo": "fedora_44",
@@ -514,6 +460,78 @@
         },
         {
           "repo": "fedora_44",
+          "subrepo": "updates",
+          "srcname": "mingw-python3",
+          "visiblename": "mingw-python3",
+          "version": "3.11.18",
+          "origversion": "3.11.18-1.fc44",
+          "summary": "MinGW Windows python3"
+        },
+        {
+          "repo": "fedora_44",
+          "subrepo": "updates",
+          "srcname": "python3.11",
+          "visiblename": "python3.11",
+          "version": "3.11.18",
+          "origversion": "3.11.18-1.fc44",
+          "summary": "Version 3.11 of the Python interpreter"
+        },
+        {
+          "repo": "fedora_44",
+          "subrepo": "updates",
+          "srcname": "python3.10",
+          "visiblename": "python3.10",
+          "version": "3.10.22",
+          "origversion": "3.10.22-1.fc44",
+          "summary": "Version 3.10 of the Python interpreter"
+        },
+        {
+          "repo": "fedora_44",
+          "subrepo": "updates",
+          "srcname": "python3.12",
+          "visiblename": "python3.12",
+          "version": "3.12.16",
+          "origversion": "3.12.16-2.fc44",
+          "summary": "Version 3.12 of the Python interpreter"
+        },
+        {
+          "repo": "fedora_44",
+          "subrepo": "updates",
+          "srcname": "python3.13",
+          "visiblename": "python3.13",
+          "version": "3.13.18",
+          "origversion": "3.13.18-1.fc44",
+          "summary": "Version 3.13 of the Python interpreter"
+        },
+        {
+          "repo": "fedora_45",
+          "subrepo": "release",
+          "srcname": "python3.13",
+          "visiblename": "python3.13",
+          "version": "3.13.15",
+          "origversion": "3.13.15-1.fc45",
+          "summary": "Version 3.13 of the Python interpreter"
+        },
+        {
+          "repo": "fedora_44",
+          "subrepo": "updates",
+          "srcname": "python3.6",
+          "visiblename": "python3.6",
+          "version": "3.6.15",
+          "origversion": "3.6.15-60.fc44",
+          "summary": "Version 3.6 of the Python interpreter"
+        },
+        {
+          "repo": "fedora_44",
+          "subrepo": "updates",
+          "srcname": "python3.9",
+          "visiblename": "python3.9",
+          "version": "3.9.25",
+          "origversion": "3.9.25-15.fc44",
+          "summary": "Version 3.9 of the Python interpreter"
+        },
+        {
+          "repo": "fedora_44",
           "subrepo": "release",
           "srcname": "mingw-python3",
           "visiblename": "mingw-python3",
@@ -524,11 +542,11 @@
         {
           "repo": "fedora_45",
           "subrepo": "release",
-          "srcname": "python3.10",
-          "visiblename": "python3.10",
-          "version": "3.10.21",
-          "origversion": "3.10.21-1.fc45",
-          "summary": "Version 3.10 of the Python interpreter"
+          "srcname": "mingw-python3",
+          "visiblename": "mingw-python3",
+          "version": "3.11.16",
+          "origversion": "3.11.16-1.fc45",
+          "summary": "MinGW Windows python3"
         },
         {
           "repo": "fedora_45",
@@ -542,29 +560,11 @@
         {
           "repo": "fedora_45",
           "subrepo": "release",
-          "srcname": "mingw-python3",
-          "visiblename": "mingw-python3",
-          "version": "3.11.16",
-          "origversion": "3.11.16-1.fc45",
-          "summary": "MinGW Windows python3"
-        },
-        {
-          "repo": "fedora_45",
-          "subrepo": "release",
-          "srcname": "python3.12",
-          "visiblename": "python3.12",
-          "version": "3.12.14",
-          "origversion": "3.12.14-1.fc45",
-          "summary": "Version 3.12 of the Python interpreter"
-        },
-        {
-          "repo": "fedora_45",
-          "subrepo": "release",
-          "srcname": "python3.13",
-          "visiblename": "python3.13",
-          "version": "3.13.15",
-          "origversion": "3.13.15-1.fc45",
-          "summary": "Version 3.13 of the Python interpreter"
+          "srcname": "python3.10",
+          "visiblename": "python3.10",
+          "version": "3.10.21",
+          "origversion": "3.10.21-1.fc45",
+          "summary": "Version 3.10 of the Python interpreter"
         },
         {
           "repo": "fedora_45",
@@ -689,14 +689,6 @@
         },
         {
           "repo": "ubuntu_24_04",
-          "subrepo": "noble/main",
-          "srcname": "python3.12",
-          "visiblename": "python3.12",
-          "version": "3.12.3",
-          "origversion": "3.12.3-1"
-        },
-        {
-          "repo": "ubuntu_24_04",
           "subrepo": "noble-updates/main",
           "srcname": "python3.12",
           "visiblename": "python3.12",
@@ -704,12 +696,12 @@
           "origversion": "3.12.3-1ubuntu0.17"
         },
         {
-          "repo": "ubuntu_26_04",
-          "subrepo": "resolute/main",
-          "srcname": "python3.14",
-          "visiblename": "python3.14",
-          "version": "3.14.4",
-          "origversion": "3.14.4-1"
+          "repo": "ubuntu_24_04",
+          "subrepo": "noble/main",
+          "srcname": "python3.12",
+          "visiblename": "python3.12",
+          "version": "3.12.3",
+          "origversion": "3.12.3-1"
         },
         {
           "repo": "ubuntu_26_04",
@@ -718,12 +710,20 @@
           "visiblename": "python3.14",
           "version": "3.14.4",
           "origversion": "3.14.4-1ubuntu0.2"
+        },
+        {
+          "repo": "ubuntu_26_04",
+          "subrepo": "resolute/main",
+          "srcname": "python3.14",
+          "visiblename": "python3.14",
+          "version": "3.14.4",
+          "origversion": "3.14.4-1"
         }
       ]
     },
     "postgresql": {
       "project": "postgresql",
-      "checked_at": "2026-11-25T05:27:02Z",
+      "checked_at": "2026-11-25T05:42:38Z",
       "packages": [
         {
           "repo": "almalinux_9",
@@ -1007,7 +1007,7 @@
     },
     "nginx": {
       "project": "nginx",
-      "checked_at": "2026-11-25T05:27:02Z",
+      "checked_at": "2026-11-25T05:42:38Z",
       "packages": [
         {
           "repo": "fedora_44",
@@ -1246,7 +1246,7 @@
     },
     "mariadb": {
       "project": "mariadb",
-      "checked_at": "2026-11-25T05:27:02Z",
+      "checked_at": "2026-11-25T05:42:38Z",
       "packages": [
         {
           "repo": "debian_12",
@@ -1423,7 +1423,7 @@
     },
     "redis": {
       "project": "redis",
-      "checked_at": "2026-11-25T05:27:02Z",
+      "checked_at": "2026-11-25T05:42:38Z",
       "packages": [
         {
           "repo": "almalinux_9",
@@ -1461,7 +1461,7 @@
         },
         {
           "repo": "debian_13",
-          "subrepo": "trixie/main",
+          "subrepo": "trixie-security/main",
           "srcname": "redis",
           "visiblename": "redis",
           "version": "8.0.2",
@@ -1469,7 +1469,7 @@
         },
         {
           "repo": "debian_13",
-          "subrepo": "trixie-security/main",
+          "subrepo": "trixie/main",
           "srcname": "redis",
           "visiblename": "redis",
           "version": "8.0.2",
@@ -1509,25 +1509,25 @@
         },
         {
           "repo": "ubuntu_26_04",
-          "subrepo": "resolute-updates/universe",
-          "srcname": "redis",
-          "visiblename": "redis",
-          "version": "8.0.5",
-          "origversion": "5:8.0.5-1ubuntu0.1"
-        },
-        {
-          "repo": "ubuntu_26_04",
           "subrepo": "resolute/universe",
           "srcname": "redis",
           "visiblename": "redis",
           "version": "8.0.5",
           "origversion": "5:8.0.5-1"
+        },
+        {
+          "repo": "ubuntu_26_04",
+          "subrepo": "resolute-updates/universe",
+          "srcname": "redis",
+          "visiblename": "redis",
+          "version": "8.0.5",
+          "origversion": "5:8.0.5-1ubuntu0.1"
         }
       ]
     },
     "git": {
       "project": "git",
-      "checked_at": "2026-11-25T05:27:02Z",
+      "checked_at": "2026-11-25T05:42:38Z",
       "packages": [
         {
           "repo": "almalinux_9",
@@ -1650,7 +1650,7 @@
     },
     "nodejs": {
       "project": "nodejs",
-      "checked_at": "2026-11-25T05:27:02Z",
+      "checked_at": "2026-11-25T05:42:38Z",
       "packages": [
         {
           "repo": "almalinux_9",
@@ -1855,7 +1855,7 @@
     },
     "openssh": {
       "project": "openssh",
-      "checked_at": "2026-11-25T05:27:02Z",
+      "checked_at": "2026-11-25T05:42:38Z",
       "packages": [
         {
           "repo": "almalinux_9",
@@ -2070,7 +2070,7 @@
     },
     "curl": {
       "project": "curl",
-      "checked_at": "2026-11-25T05:27:02Z",
+      "checked_at": "2026-11-25T05:42:38Z",
       "packages": [
         {
           "repo": "almalinux_9",
@@ -2092,19 +2092,19 @@
         },
         {
           "repo": "debian_12",
-          "subrepo": "bookworm/main",
-          "srcname": "curl",
-          "visiblename": "curl",
-          "version": "7.88.1",
-          "origversion": "7.88.1-10+deb12u15"
-        },
-        {
-          "repo": "debian_12",
           "subrepo": "bookworm-security/main",
           "srcname": "curl",
           "visiblename": "curl",
           "version": "7.88.1",
           "origversion": "7.88.1-10+deb12u5"
+        },
+        {
+          "repo": "debian_12",
+          "subrepo": "bookworm/main",
+          "srcname": "curl",
+          "visiblename": "curl",
+          "version": "7.88.1",
+          "origversion": "7.88.1-10+deb12u15"
         },
         {
           "repo": "debian_13",
@@ -2159,15 +2159,6 @@
         },
         {
           "repo": "fedora_45",
-          "subrepo": "updates",
-          "srcname": "curl",
-          "visiblename": "curl",
-          "version": "8.21.0",
-          "origversion": "8.21.0-9.fc45",
-          "summary": "A utility for getting files from remote servers (FTP, HTTP, and others)"
-        },
-        {
-          "repo": "fedora_45",
           "subrepo": "release",
           "srcname": "curl",
           "visiblename": "curl",
@@ -2183,6 +2174,15 @@
           "version": "8.21.0",
           "origversion": "8.21.0-2.fc45",
           "summary": "MinGW Windows port of curl and libcurl"
+        },
+        {
+          "repo": "fedora_45",
+          "subrepo": "updates",
+          "srcname": "curl",
+          "visiblename": "curl",
+          "version": "8.21.0",
+          "origversion": "8.21.0-9.fc45",
+          "summary": "A utility for getting files from remote servers (FTP, HTTP, and others)"
         },
         {
           "repo": "ubuntu_22_04",
@@ -2202,14 +2202,6 @@
         },
         {
           "repo": "ubuntu_24_04",
-          "subrepo": "noble/main",
-          "srcname": "curl",
-          "visiblename": "curl",
-          "version": "8.5.0",
-          "origversion": "8.5.0-2ubuntu10"
-        },
-        {
-          "repo": "ubuntu_24_04",
           "subrepo": "noble-updates/main",
           "srcname": "curl",
           "visiblename": "curl",
@@ -2217,12 +2209,12 @@
           "origversion": "8.5.0-2ubuntu10.16"
         },
         {
-          "repo": "ubuntu_26_04",
-          "subrepo": "resolute/main",
+          "repo": "ubuntu_24_04",
+          "subrepo": "noble/main",
           "srcname": "curl",
           "visiblename": "curl",
-          "version": "8.18.0",
-          "origversion": "8.18.0-1ubuntu2"
+          "version": "8.5.0",
+          "origversion": "8.5.0-2ubuntu10"
         },
         {
           "repo": "ubuntu_26_04",
@@ -2231,12 +2223,20 @@
           "visiblename": "curl",
           "version": "8.18.0",
           "origversion": "8.18.0-1ubuntu2.8"
+        },
+        {
+          "repo": "ubuntu_26_04",
+          "subrepo": "resolute/main",
+          "srcname": "curl",
+          "visiblename": "curl",
+          "version": "8.18.0",
+          "origversion": "8.18.0-1ubuntu2"
         }
       ]
     },
     "podman": {
       "project": "podman",
-      "checked_at": "2026-11-25T05:27:02Z",
+      "checked_at": "2026-11-25T05:42:38Z",
       "packages": [
         {
           "repo": "almalinux_9",
@@ -2397,7 +2397,7 @@
     },
     "ansible": {
       "project": "ansible",
-      "checked_at": "2026-11-25T05:27:02Z",
+      "checked_at": "2026-11-25T05:42:38Z",
       "packages": [
         {
           "repo": "debian_12",
