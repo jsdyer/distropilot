@@ -17,6 +17,23 @@
   "access": "browser",
   "data_info": {
     "mode": "mixed",
-    "detail": "Repology package captures and official distro lifecycle dates; live project lookups use a cached gateway."
+    "detail": "Repology package captures and official distro lifecycle dates; live project lookups use a cached gateway.",
+    "cadence": "Daily",
+    "probes": [
+      {
+        "url": "https://coolcode.ca/distropilot/data/status.json",
+        "path": [
+          "checked_at"
+        ],
+        "precision": "minute",
+        "label": "Package and lifecycle sources checked",
+        "count_at": {
+          "path": [
+            "count"
+          ],
+          "unit": "projects"
+        }
+      }
+    ]
   }
 }
