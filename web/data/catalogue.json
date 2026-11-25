@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "checked_at": "2026-11-25T06:46:53Z",
+  "checked_at": "2026-11-25T06:52:01Z",
   "projects": {
     "firefox": {
       "project": "firefox",
       "label": "Firefox",
       "category": "Desktop & office",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_24",
@@ -5145,7 +5145,7 @@
       "project": "chromium",
       "label": "Chromium",
       "category": "Desktop & office",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -6330,7 +6330,7 @@
       "project": "thunderbird",
       "label": "Thunderbird",
       "category": "Desktop & office",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "arch",
@@ -8781,7 +8781,7 @@
       "project": "libreoffice",
       "label": "LibreOffice",
       "category": "Desktop & office",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -16291,7 +16291,7 @@
       "project": "calibre",
       "label": "Calibre",
       "category": "Desktop & office",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "arch",
@@ -16434,7 +16434,7 @@
       "project": "keepassxc",
       "label": "KeePassXC",
       "category": "Desktop & office",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -16741,7 +16741,7 @@
       "project": "cinnamon",
       "label": "Cinnamon",
       "category": "Desktop & office",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "arch",
@@ -16885,7 +16885,7 @@
       "project": "remmina",
       "label": "Remmina",
       "category": "Desktop & office",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "opensuse_leap_15_6",
@@ -17153,7 +17153,7 @@
       "project": "vlc",
       "label": "VLC",
       "category": "Media & design",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -18241,7 +18241,7 @@
       "project": "mpv",
       "label": "mpv",
       "category": "Media & design",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -18628,7 +18628,7 @@
       "project": "ffmpeg",
       "label": "FFmpeg",
       "category": "Media & design",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_23",
@@ -20154,7 +20154,7 @@
       "project": "gimp",
       "label": "GIMP",
       "category": "Media & design",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "almalinux_8",
@@ -20798,7 +20798,7 @@
       "project": "inkscape",
       "label": "Inkscape",
       "category": "Media & design",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "almalinux_8",
@@ -21320,7 +21320,7 @@
       "project": "krita",
       "label": "Krita",
       "category": "Media & design",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -21562,7 +21562,7 @@
       "project": "blender",
       "label": "Blender",
       "category": "Media & design",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "arch",
@@ -21878,7 +21878,7 @@
       "project": "audacity",
       "label": "Audacity",
       "category": "Media & design",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -22095,7 +22095,7 @@
       "project": "obs-studio",
       "label": "OBS Studio",
       "category": "Media & design",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -22284,7 +22284,7 @@
       "project": "handbrake",
       "label": "HandBrake",
       "category": "Media & design",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -22465,7 +22465,7 @@
       "project": "restic",
       "label": "restic",
       "category": "Backup & files",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -22761,7 +22761,7 @@
       "project": "borgbackup",
       "label": "BorgBackup",
       "category": "Backup & files",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -23133,7 +23133,7 @@
       "project": "rclone",
       "label": "rclone",
       "category": "Backup & files",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "arch",
@@ -23455,7 +23455,7 @@
       "project": "rsync",
       "label": "rsync",
       "category": "Backup & files",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -23955,7 +23955,7 @@
       "project": "syncthing",
       "label": "Syncthing",
       "category": "Backup & files",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "arch",
@@ -24296,7 +24296,7 @@
       "project": "duplicity",
       "label": "Duplicity",
       "category": "Backup & files",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -24531,7 +24531,7 @@
       "project": "filezilla",
       "label": "FileZilla",
       "category": "Backup & files",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -24738,7 +24738,7 @@
       "project": "ncdu",
       "label": "ncdu",
       "category": "Backup & files",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -24964,7 +24964,7 @@
       "project": "openssh",
       "label": "OpenSSH",
       "category": "Network & security",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "almalinux_8",
@@ -26044,7 +26044,7 @@
       "project": "openvpn",
       "label": "OpenVPN",
       "category": "Network & security",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -26408,7 +26408,7 @@
       "project": "wireguard-tools",
       "label": "WireGuard tools",
       "category": "Network & security",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "almalinux_9",
@@ -26677,7 +26677,7 @@
       "project": "nmap",
       "label": "Nmap",
       "category": "Network & security",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "arch",
@@ -27064,7 +27064,7 @@
       "project": "wireshark",
       "label": "Wireshark",
       "category": "Network & security",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_24",
@@ -27583,7 +27583,7 @@
       "project": "bind",
       "label": "BIND",
       "category": "Network & security",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -28602,7 +28602,7 @@
       "project": "unbound",
       "label": "Unbound",
       "category": "Network & security",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "almalinux_9",
@@ -29263,7 +29263,7 @@
       "project": "dnsmasq",
       "label": "dnsmasq",
       "category": "Network & security",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "arch",
@@ -29790,7 +29790,7 @@
       "project": "curl",
       "label": "curl",
       "category": "Network & security",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_23",
@@ -30637,7 +30637,7 @@
       "project": "wget",
       "label": "Wget",
       "category": "Network & security",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -31185,7 +31185,7 @@
       "project": "git",
       "label": "Git",
       "category": "Development",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "almalinux_8",
@@ -32243,7 +32243,7 @@
       "project": "python",
       "label": "Python",
       "category": "Development",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "almalinux_9",
@@ -36618,7 +36618,7 @@
       "project": "nodejs",
       "label": "Node.js",
       "category": "Development",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "almalinux_8",
@@ -38162,7 +38162,7 @@
       "project": "go",
       "label": "Go",
       "category": "Development",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "almalinux_8",
@@ -39913,7 +39913,7 @@
       "project": "rust",
       "label": "Rust",
       "category": "Development",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "almalinux_8",
@@ -41913,7 +41913,7 @@
       "project": "gcc",
       "label": "GCC",
       "category": "Development",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "debian_12",
@@ -48677,7 +48677,7 @@
       "project": "cmake",
       "label": "CMake",
       "category": "Development",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "almalinux_8",
@@ -49154,7 +49154,7 @@
       "project": "php",
       "label": "PHP",
       "category": "Development",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "almalinux_8",
@@ -56700,7 +56700,7 @@
       "project": "ruby",
       "label": "Ruby",
       "category": "Development",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "almalinux_8",
@@ -57766,7 +57766,7 @@
       "project": "neovim",
       "label": "Neovim",
       "category": "Development",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -57991,7 +57991,7 @@
       "project": "vim",
       "label": "Vim",
       "category": "Development",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_23",
@@ -58762,7 +58762,7 @@
       "project": "emacs",
       "label": "Emacs",
       "category": "Development",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "arch",
@@ -59381,7 +59381,7 @@
       "project": "jq",
       "label": "jq",
       "category": "Terminal & admin",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "almalinux_8",
@@ -59755,7 +59755,7 @@
       "project": "ripgrep",
       "label": "ripgrep",
       "category": "Terminal & admin",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -60025,7 +60025,7 @@
       "project": "fzf",
       "label": "fzf",
       "category": "Terminal & admin",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -60393,7 +60393,7 @@
       "project": "tmux",
       "label": "tmux",
       "category": "Terminal & admin",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "almalinux_8",
@@ -60661,7 +60661,7 @@
       "project": "zsh",
       "label": "Zsh",
       "category": "Terminal & admin",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -61382,7 +61382,7 @@
       "project": "fish",
       "label": "Fish",
       "category": "Terminal & admin",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -61626,7 +61626,7 @@
       "project": "htop",
       "label": "htop",
       "category": "Terminal & admin",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -61816,7 +61816,7 @@
       "project": "btop",
       "label": "btop",
       "category": "Terminal & admin",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "arch",
@@ -62005,7 +62005,7 @@
       "project": "podman",
       "label": "Podman",
       "category": "Terminal & admin",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "almalinux_9",
@@ -63254,7 +63254,7 @@
       "project": "ansible",
       "label": "Ansible",
       "category": "Terminal & admin",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
@@ -63516,7 +63516,7 @@
       "project": "postgresql",
       "label": "PostgreSQL",
       "category": "Servers & databases",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "almalinux_8",
@@ -66625,7 +66625,7 @@
       "project": "mariadb",
       "label": "MariaDB",
       "category": "Servers & databases",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "arch",
@@ -67828,7 +67828,7 @@
       "project": "sqlite",
       "label": "SQLite",
       "category": "Servers & databases",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "almalinux_8",
@@ -68428,7 +68428,7 @@
       "project": "redis",
       "label": "Redis",
       "category": "Servers & databases",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_24",
@@ -68883,7 +68883,7 @@
       "project": "nginx",
       "label": "nginx",
       "category": "Servers & databases",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "arch",
@@ -71263,7 +71263,7 @@
       "project": "apache",
       "label": "Apache HTTP Server",
       "category": "Servers & databases",
-      "checked_at": "2026-11-25T06:46:53Z",
+      "checked_at": "2026-11-25T06:52:01Z",
       "packages": [
         {
           "repo": "alpine_3_22",
